@@ -1,6 +1,10 @@
 from fastapi import FastAPI
+from fastapi.staticfiles import StaticFiles
+from fastapi.responses import FileResponse
 import uvicorn
 import threading
+import os
+import time
 
 class App():
     def __init__(self, host="127.0.0.1", port=8000):
@@ -9,11 +13,15 @@ class App():
         self.port = int(port)
         self.server_thread = None
 
+        # Dossier où se trouve l'application js une fois buildé
+        self.static_dir = os.path.join(os.path.dirname(__file__), "../front/dist")        
+        self.app.mount("/", StaticFiles(directory=self.static_dir, html=True), name="static")
+
         # Les routes accessibles
 
         @self.app.get("/")
         async def root():
-            return {"message": "Hello World"}
+            return FileResponse(os.path.join(self.static_dir, f"index.html"))
         
     def start_server(self):
         """
