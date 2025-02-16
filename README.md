@@ -1,4 +1,4 @@
-# Projet Dahlia - 0.0.1
+# Projet Dahlia - 0.0.2
 
 ## Introduction
 
