@@ -9,5 +9,6 @@ services:
     volumes:
       - .:/app
       - /app/node_modules
+      - ../.env:/app/.env
     stdin_open: true
     tty: true

@@ -1,10 +1,10 @@
-# Projet Dahlia - 0.0.2
+# Projet Dahlia - 0.0.3
 
-## Introduction
+## Introduction
 
 Dahlia est un projet open source ambitieux visant à démystifier la création d'intelligence artificielle. Il propose un cadre d'apprentissage pratique pour développer un agent capable d'évoluer dans un monde virtuel. Ce projet explore les différentes facettes techniques nécessaires à la mise en place d'une solution d'IA fonctionnelle et stable, en partant de zéro.
 
-## Objectifs
+## Objectifs
 
 - Démocratiser l'IA : Fournir une ressource éducative et accessible pour comprendre et construire des systèmes d'IA.
 - Apprentissage par la pratique : Offrir un environnement concret pour expérimenter et mettre en œuvre des concepts d'IA.
@@ -47,6 +47,6 @@ Le projet Dahlia est ouvert aux contributions de la communauté. Vous pouvez par
 
 Les instructions d'installation détaillées seront fournies dans un document séparé (INSTALL.md).
 
-## Licence
+## Licence
 
 Ce projet est sous licence GNU GENERAL PUBLIC LICENSE.
