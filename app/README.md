@@ -25,8 +25,33 @@ pip install -r requierements.txt
 pyinstaller --onefile --name dahlia main.py
 ```
 
-## Générer les certificats SSL
+
+
+## Bugs
+
+### Error
 
 ```sh
-openssl req -x509 -newkey rsa:4096 -keyout key.pem -out cert.pem -days 365 -nodes
+Traceback (most recent call last):
+  File "....../app/main.py", line 2, in <module>
+    from client.main import client_start
+  File "....../app/client/main.py", line 2, in <module>
+    from PyQt6.QtWebEngineWidgets import QWebEngineView
+ImportError: .....miniconda3/envs/dahlia/bin/../lib/libstdc++.so.6: version GLIBCXX_3.4.30' not found (required by /lib/x86_64-linux-gnu/libLLVM.so.19.1)
+```
+
+### Solution
+
+- Lister les versions actuelles:
+
+```sh
+strings $(g++ -print-file-name=libstdc++.so.6) | grep GLIBCXX
+```
+
+Si GLIBCXX_3.4.30 n'y est pas il faut mettre à jour libstdc++.
+
+Suite à une mise à jour du système hôte, il faut forcer une mise à jour pour conda.
+
+```sh
+conda install -c conda-forge libstdcxx-ng
 ```

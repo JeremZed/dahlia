@@ -10,12 +10,14 @@ def on_cert_error(e):
     """
         Acceptation du certification SSL autosigné uniquement pour DEV
     """
-    print(f"cert error: {e.description()}")
-    print(f"type: {e.type()}")
-    print(f"overridable: {e.isOverridable()}")
-    print(f"url: {e.url()}")
-    for c in e.certificateChain():
-        print(c.toText())
+
+    if int(os.getenv('DEBUG_LEVEL')) > 1:
+        print(f"cert error: {e.description()}")
+        print(f"type: {e.type()}")
+        print(f"overridable: {e.isOverridable()}")
+        print(f"url: {e.url()}")
+        for c in e.certificateChain():
+            print(c.toText())
 
     if os.getenv('ENV') == 'DEV':
         e.acceptCertificate()

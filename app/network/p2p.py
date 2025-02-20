@@ -115,6 +115,7 @@ class P2PNetwork():
     async def run(self):
 
         server = asyncio.create_task(self.start_server())
-        discovery = asyncio.create_task(self.network_discovery())
+        # discovery = asyncio.create_task(self.network_discovery())
 
-        await asyncio.gather(server, discovery)
+        # await asyncio.gather(server, discovery)
+        await asyncio.gather(server)
