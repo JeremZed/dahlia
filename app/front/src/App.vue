@@ -4,14 +4,14 @@
       <router-link to="/">Accueil</router-link> |
       <router-link to="/about">À propos</router-link>
     </nav>
-    <div>
+    <!-- <div>
       <h2>Mises à jour du monde :</h2>
       <ul>
         <li v-for="(msg, index) in messages" :key="index">
           {{ msg }}
         </li>
       </ul>
-    </div>
+    </div> -->
     <router-view />
   </div>
 </template>
@@ -38,9 +38,9 @@ function moveEntity(entity) {
 }
 
 // Simulation d'un déplacement toutes les 3 secondes
-setInterval(() => {
-  moveEntity("bot1");
-}, 3000);
+// setInterval(() => {
+//   moveEntity("bot1");
+// }, 3000);
 </script>
 
 <style>
